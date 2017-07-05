@@ -1,0 +1,3 @@
+get extension: java, java debug
+ALT + C to complie
+ALT + R to run
