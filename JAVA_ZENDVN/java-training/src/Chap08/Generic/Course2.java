@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Chap07.Collection;
+package Chap08.Generic;
 
 /**
  *
  * @author NGUYENHOANGVANNHA
  */
-public class Course implements Comparable {
+public class Course2 <T1, T2> {
     private String name;
-    private int time;
-    public Course(String name,int time){
-        this.setName(name);
-        this.setTime(time);
+    private T1 time;
+    private T2 chapter;
+    public Course2(String name, T1 time, T2 chapter){
+        this.name = name;
+        this.time = time;
+        this.chapter = chapter;
     }
 
     /**
@@ -34,28 +36,28 @@ public class Course implements Comparable {
     /**
      * @return the time
      */
-    protected int getTime() {
+    protected T1 getTime() {
         return time;
     }
 
     /**
      * @param time the time to set
      */
-    protected void setTime(int time) {
+    protected void setTime(T1 time) {
         this.time = time;
     }
 
-    @Override
-    public String toString() {
-        return "Name: " + this.getName() +"\nTime: " + this.getTime();
+    /**
+     * @return the chapter
+     */
+    protected T2 getChapter() {
+        return chapter;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        Course courseObj = (Course) o;
-        if(this.getTime() > courseObj.getTime()) return 1;
-        else if(this.getTime() < courseObj.getTime()) return -1;
-        else return 0;
+    /**
+     * @param chapter the chapter to set
+     */
+    protected void setChapter(T2 chapter) {
+        this.chapter = chapter;
     }
-    
 }
