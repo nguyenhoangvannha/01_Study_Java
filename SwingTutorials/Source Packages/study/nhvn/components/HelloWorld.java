@@ -11,6 +11,7 @@ public class HelloWorld extends JFrame {
 		setLocation(500, 300);// dat vi tri cua so
 		setResizable(false); // khong cho phep thay doi kich thuoc cua so
 		JLabel label = new JLabel("HelloWorld");
+                this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		add(label);
 	}
 	public static void main(String args[]){
