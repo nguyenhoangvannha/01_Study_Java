@@ -5,6 +5,11 @@
  */
 package nhvn.ComparisonAlgorithm.main;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author NGUYENHOANGVANNHA
@@ -15,6 +20,11 @@ public class ComparisonAlgorithm extends javax.swing.JFrame {
      * Creates new form main
      */
     public ComparisonAlgorithm() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(ComparisonAlgorithm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
     }
 
@@ -42,6 +52,7 @@ public class ComparisonAlgorithm extends javax.swing.JFrame {
         lbQuickInsertionSort = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(500, 60));
 
         jLabel1.setText("Comparison Algorithm");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);

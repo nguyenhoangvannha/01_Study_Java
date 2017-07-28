@@ -1,0 +1,6 @@
+interface: tu khoa implements
+	cac method la cac abstract method
+	cac class implements interface thi phai thuc hien cac phuong thuc cua interface
+cach de khong implements cac method cua interface:
+	1.them default vao method: phai viet than ham cho method
+	2.them static vao method: khong can tham ham cho method

@@ -23,35 +23,13 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
+        student1.setBirthDay(2017);
         try {
             UIManager.setLookAndFeel(
                     UIManager.getCrossPlatformLookAndFeelClassName());
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-//        try {
-//            // Set cross-platform Java L&F (also called "Metal")
-//            UIManager.setLookAndFeel(
-//            UIManager.getCrossPlatformLookAndFeelClassName());
-//        } 
-//        catch (UnsupportedLookAndFeelException e) {
-//       // handle exception
-//        }
-//        catch (ClassNotFoundException e) {
-//       // handle exception
-//        }
-//        catch (InstantiationException e) {
-//       // handle exception
-//        }
-//        catch (IllegalAccessException e) {
-//       // handle exception
-//        }
         initComponents();
         initModel();
     }
@@ -72,11 +50,13 @@ public class Main extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         cbBirthDay = new javax.swing.JComboBox<>();
         tfBirthDay = new javax.swing.JTextField();
-        tfShowInfo = new javax.swing.JButton();
+        bShowInfo = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        tfScore = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Student Info");
-        setLocation(new java.awt.Point(500, 30));
+        setLocation(new java.awt.Point(500, 60));
 
         jLabel1.setText("Name");
 
@@ -90,12 +70,14 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        tfShowInfo.setText("Show info");
-        tfShowInfo.addActionListener(new java.awt.event.ActionListener() {
+        bShowInfo.setText("Show info");
+        bShowInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfShowInfoActionPerformed(evt);
+                bShowInfoActionPerformed(evt);
             }
         });
+
+        jLabel4.setText("Score");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,14 +85,20 @@ public class Main extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tfShowInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
-                        .addGap(33, 33, 33)
+                        .addGap(33, 33, 33))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(43, 43, 43)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfScore, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(bShowInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tfName)
                             .addGroup(layout.createSequentialGroup()
@@ -118,7 +106,7 @@ public class Main extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(tfBirthDay, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
                             .addComponent(tfID))))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,9 +124,13 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(cbBirthDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfBirthDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(tfShowInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(tfScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(bShowInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         pack();
@@ -149,20 +141,22 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         int value = (int)evt.getItem();
         student1.setBirthDay(value);
+        
         String svalue = Integer.toString(value);
         tfBirthDay.setText(svalue);
     }//GEN-LAST:event_cbBirthDayItemStateChanged
 
-    private void tfShowInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfShowInfoActionPerformed
+    private void bShowInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowInfoActionPerformed
         // TODO add your handling code here:
         student1.setName(tfName.getText());
         student1.setID(tfID.getText());
         Calendar now = Calendar.getInstance();
-        
-        JOptionPane.showMessageDialog(null, "Student: " + student1.getName() + "\nID: " 
-                + student1.getID() +"\nBirth day: " + student1.getBirthDay() + "\nAge: " 
-                + (now.get(Calendar.YEAR) - student1.getBirthDay()), "Infomation", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_tfShowInfoActionPerformed
+        student1.setScore(Double.parseDouble(tfScore.getText()));
+//        JOptionPane.showMessageDialog(null, "Student: " + student1.getName() + "\nID: " 
+//                + student1.getID() +"\nBirth day: " + student1.getBirthDay() + "\nAge: " 
+//                + (now.get(Calendar.YEAR) - student1.getBirthDay()), "Infomation", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,student1.toString(), "Infomation" ,JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_bShowInfoActionPerformed
     
     private void initModel(){
         DefaultComboBoxModel model = new DefaultComboBoxModel();
@@ -207,13 +201,15 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bShowInfo;
     private javax.swing.JComboBox<String> cbBirthDay;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField tfBirthDay;
     private javax.swing.JTextField tfID;
     private javax.swing.JTextField tfName;
-    private javax.swing.JButton tfShowInfo;
+    private javax.swing.JTextField tfScore;
     // End of variables declaration//GEN-END:variables
 }

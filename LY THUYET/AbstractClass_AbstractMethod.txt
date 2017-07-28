@@ -1,0 +1,7 @@
+co chu abstract o dau class hoac dau method: tu khoa extends
+voi class:
+	khong tao duoc doi tuong doi voi abstract class
+	phai override cac abstract method trong abstract class
+	abstract method khong co phan than chi co khai bao
+voi method:
+	khi overide cac tham so truyen vao phai giong voi abstract method goc

@@ -9,50 +9,32 @@ package chap02.oopbasic;
  *
  * @author NGUYENHOANGVANNHA
  */
-public class Student {
-    private String name = "";
-    private String ID = "";
-    private int birthDay = 0;
-
+public class Student extends Person{
+    private double score;
+    
     /**
-     * @return the name
+     * @return the score
      */
-    protected String getName() {
-        return name;
+    public double getScore() {
+        return score;
     }
 
     /**
-     * @param name the name to set
+     * @param score the score to set
      */
-    protected void setName(String name) {
-        this.name = name;
+    public void setScore(double score) {
+        this.score = score;
+    }
+    
+    public void showInfo(){
+        super.showInfo();
+        System.out.println("Score: " + this.getScore());
     }
 
-    /**
-     * @return the ID
-     */
-    protected String getID() {
-        return ID;
+    @Override
+    public String toString() {
+        String sString = super.toString();
+        return sString + "\nScore: " + this.getScore();
     }
-
-    /**
-     * @param ID the ID to set
-     */
-    protected void setID(String ID) {
-        this.ID = ID;
-    }
-
-    /**
-     * @return the birthDay
-     */
-    protected int getBirthDay() {
-        return birthDay;
-    }
-
-    /**
-     * @param birthDay the birthDay to set
-     */
-    protected void setBirthDay(int birthDay) {
-        this.birthDay = birthDay;
-    }
+    
 }

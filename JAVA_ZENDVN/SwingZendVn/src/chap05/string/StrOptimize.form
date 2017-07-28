@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="String Optimize"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="66" green="ff" red="66" type="rgb"/>
+    </Property>
+    <Property name="location" type="java.awt.Point" editor="org.netbeans.beaninfo.editors.PointEditor">
+      <Point value="[400, 70]"/>
+    </Property>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jScrollPane1" min="-2" pref="282" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btToString" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="227" pref="42" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane2" alignment="0" min="-2" pref="277" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btChuanHoaDang1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btChuanHoaDang2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  <Component id="btToString" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btChuanHoaDang1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btChuanHoaDang2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="132" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="taInput">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Input"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btToString">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="To String"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btToStringActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Output"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="taOutput">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="btChuanHoaDang1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Chuan hoa dang 1"/>
+        <Property name="toolTipText" type="java.lang.String" value="Chu&#x1ed7;i &#x111;&#x1ea1;t chu&#x1ea9;n d&#x1ea1;ng 1. &#x2022; Kh&#xf4;ng c&#xf3; kho&#x1ea3;ng tr&#x1eaf;ng &#x1edf; &#x111;&#x1ea7;u v&#xe0; cu&#x1ed1;i chu&#x1ed7;i &#x2022; Gi&#x1eef;a c&#xe1;c t&#x1eeb; trong chu&#x1ed7;i ch&#x1ec9; t&#x1ed3;n t&#x1ea1;i m&#x1ed9;t kho&#x1ea3;ng tr&#x1eaf;ng duy nh&#x1ea5;t &#x2022; K&#xfd; t&#x1ef1; &#x111;&#x1ea7;u ti&#xea;n trong chu&#x1ed7;i ph&#x1ea3;i l&#xe0; k&#xfd; t&#x1ef1; in hoa &#x2022; C&#xe1;c k&#xfd; t&#x1ef1; c&#xf2;n l&#x1ea1;i ph&#x1ea3;i &#x1edf; d&#x1ea1;ng ch&#x1eef; th&#x1b0;&#x1edd;ng &#x2022; H&#x1ebf;t c&#xe2;u b&#x1eb1;ng d&#x1ea5;u ch&#x1ea5;m"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btChuanHoaDang1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btChuanHoaDang2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Chuan hoa dang 2"/>
+        <Property name="toolTipText" type="java.lang.String" value="Chu&#x1ed7;i &#x110;&#x1ea1;t Chu&#x1ea9;n D&#x1ea1;ng 2. &#x2022; Kh&#xf4;ng c&#xf3; kho&#x1ea3;ng tr&#x1eaf;ng &#x1edf; &#x111;&#x1ea7;u v&#xe0; cu&#x1ed1;i chu&#x1ed7;i &#x2022; Gi&#x1eef;a c&#xe1;c t&#x1eeb; trong chu&#x1ed7;i ch&#x1ec9; t&#x1ed3;n t&#x1ea1;i m&#x1ed9;t kho&#x1ea3;ng tr&#x1eaf;ng duy nh&#x1ea5;t &#x2022; K&#xfd; t&#x1ef1; &#x111;&#x1ea7;u ti&#xea;n trong chu&#x1ed7;i ph&#x1ea3;i l&#xe0; k&#xfd; t&#x1ef1; in hoa, &#x2022; H&#x1ebf;t c&#xe2;u b&#x1eb1;ng d&#x1ea5;u ch&#x1ea5;m &#x2022; C&#xe1;c k&#xfd; t&#x1ef1; &#x111;&#x1ea7;u ti&#xea;n &#x1edf; m&#x1ed7;i t&#x1eeb; ph&#x1ea3;i vi&#x1ebf;t &#x111;&#x1b0;&#x1ee3;c vi&#x1ebf;t hoa"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btChuanHoaDang2ActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
