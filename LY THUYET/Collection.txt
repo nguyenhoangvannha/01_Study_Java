@@ -1,0 +1,32 @@
+List interface:ArrayList, LinkedList
+	-Cac phan tu duoc them vao co the trung nhau
+	-Cac phan tu luu tru theo chi so
+	ArrayList:
+	-Su dung khi luu tru cac phan tu ma khong chinh sua nhieu
+	LinkedList:
+	-Su dung khi cac phan tu duoc chinh sua thuong xuyen
+Set interface:
+	-Khong chua cac phan tu trung nhau
+	-HashSet Cac phan tu khong luu tru theo chi so
+	-LinkedHashSet: giu nguyen thu tu
+	-TreeSet: cac phan tu duoc xep tang dan
+Map interface:HashMap, LinkedHashMap, TreeMap
+	-Moi phan tu bao gom key va du lieu
+	-Cac key khong duoc trung nhau
+	-hashMap: thu tu thay doi
+Static method:
+	Collections.sort();
+	Collections.reverse();
+	Collections.find();
+	Collections.shuffe();
+Comperable:
+	Muon so sanh mot Class thi implements Comperable va viet lai
+	public int comperableTo(Object o){
+		return  1: this > o
+			0: this  = o	
+			-1: this < o
+	}
+Comparator:
+	Collections.sort(Object, comperator class);
+	comperator class: phai implements Comperator 
+	va override compare(Object o1,Object o2) 

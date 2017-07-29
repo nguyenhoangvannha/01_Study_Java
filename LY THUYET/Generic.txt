@@ -1,0 +1,29 @@
+phai dung Integer thay vi int. va tuong tu voi cac kieu du lieu khac
+
+-Generic method:
+	public static <KieuDuLieu> void  printArray (KieuDuLieu[] arr){
+        	for (KieuDuLieu elm: arr){
+            	System.out.println(elm);
+        	}
+	}
+-Generic class:
+	public class CourseAdv <T1, T2> {
+    		private String name;
+    		private T1 time;
+    		private T2 chapter;
+    		public CourseAdv(String name, T1 time, T2 chapter){
+        		this.name = name;
+        		this.time = time;
+        		this.chapter = chapter;
+		}
+    	}
+	CourseAdv<String, String> courseObj = new CourseAdv("Java", 25, 10);
+        CourseAdv<String, String> courseObj2 = new CourseAdv();
+        //courseObj2.setTime(12); //error
+-Generic collection:
+
+List<Integer> listObj = new ArrayList<Integer>();
+        listObj.add(123);
+//        listObj.add(32.54); //error
+//        listObj.add("hehe");//error
+	-Set:

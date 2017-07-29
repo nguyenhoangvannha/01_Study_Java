@@ -1,0 +1,2 @@
+Ctrl shift mui ten xuong: copy dong
+Ctrl H: find and replace

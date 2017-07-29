@@ -9,14 +9,14 @@ package bookstore;
  *
  * @author NGUYENHOANGVANNHA
  */
-public class Book implements Comparable{
+public class BookOlder01 {
     private String ID;
     private String name;
     private double price;
-    public Book(){
+    public BookOlder01(){
         
     }
-    public Book(String name, String ID, double price){
+    public BookOlder01(String name, String ID, double price){
         this.setName(name);
         this.setID(ID);
         this.setPrice(price);
@@ -71,10 +71,5 @@ public class Book implements Comparable{
      */
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

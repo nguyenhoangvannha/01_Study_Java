@@ -1,0 +1,6 @@
+Doc theo byte
+RandomAccessFile accessFile = new RandomAccessFile(FILE_NAME, "rw");
+
+-Khi mo file de ghi thi noi dung cu se bi xoa va ghi de len
+-them seek() thi se khong ghi de
+-dung write de cap nhat lai mot thanh phan nao do

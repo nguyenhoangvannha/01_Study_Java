@@ -13,11 +13,11 @@ import java.util.List;
  *
  * @author NGUYENHOANGVANNHA
  */
-public class Store {
+public class StoreOlder02 {
     private String name = "The store is not named.";
     private final int MAX_ITEMS = 100;
     private int totalItems = 0;
-    private List<Book> listItems = new LinkedList<Book>();
+    private List listItems = new LinkedList();
     public boolean isEmpty(){
         if(totalItems == 0) return true;
         else return false;
@@ -28,7 +28,7 @@ public class Store {
     }
     public boolean isExistID(String bookID){
         for(int i = 0; i < totalItems; i++){
-            if(bookID.equals(listItems.get(i).getID())) return true;
+            if(bookID.equals(((Book)listItems.get(i)).getID())) return true;
         }
         return false;
     }
@@ -42,15 +42,15 @@ public class Store {
     }
     public void editBook(String bookName, String bookID, double bookPrice){
         for(int i = 0; i < totalItems; i++){
-            if(listItems.get(i).getID().equals(bookID)){
-                listItems.get(i).updateInfo(bookName, bookID, bookPrice);
+            if(((Book)listItems.get(i)).getID().equals(bookID)){
+                ((Book)listItems.get(i)).updateInfo(bookName, bookID, bookPrice);
                 return;
             }
         }
     }
     public void deleteBook(String bookID){
         for(int i = 0; i < totalItems; i++){
-            if(bookID.equals(listItems.get(i).getID())){
+            if(bookID.equals(((Book)listItems.get(i)).getID())){
                 for(int j = i; j < totalItems; j++){
                     listItems.set(j, listItems.get(j + 1));
                 }
@@ -61,13 +61,13 @@ public class Store {
     }
     public Book findBook(String bookID){
         for(int i = 0; i < totalItems; i++){
-            if(bookID.equals(listItems.get(i).getID())) return listItems.get(i);
+            if(bookID.equals(((Book)listItems.get(i)).getID())) return ((Book)listItems.get(i));
         }
         return null;
     }
     public void listBook(){
         
-    } 
+    }
 
     public void shuffle(){
         Collections.shuffle(listItems);
@@ -90,17 +90,11 @@ public class Store {
         Collections.reverse(listItems);
     }
     
-    public Book maxPrice(){
-        return Collections.max(listItems, new V3ComparatorPrice());
-    }
-    public Book minPrice(){
-        return Collections.min(listItems, new V3ComparatorPrice());
-    }
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
         for(int i =0; i < totalItems; i++){
-            str.append(listItems.get(i).getID() + "\t" + listItems.get(i).getName() + "\t" + listItems.get(i).getPrice() + "\n");
+            str.append(((Book)listItems.get(i)).getID() + "\t" + ((Book)listItems.get(i)).getName() + "\t" + ((Book)listItems.get(i)).getPrice() + "\n");
         }
         return str.toString();
     }

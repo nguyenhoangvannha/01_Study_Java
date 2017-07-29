@@ -1,0 +1,4 @@
+FileOutputStream outputStream = new FileOutputStream(FILE_NAME, false);
+            outputStream.write(data.getBytes());
+-Doc va ghi du lieu binh thuong vao nhung van theo byte
+-Khong hop voi tap tin van ban
