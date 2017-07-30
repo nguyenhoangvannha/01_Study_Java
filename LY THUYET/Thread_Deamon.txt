@@ -1,0 +1,3 @@
+DeamonThread deamonThread = new DeamonThread();
+        deamonThread.setDaemon(true);
+-Chay den khi nao cac threads khac dung thi no dung

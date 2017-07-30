@@ -1,0 +1,1 @@
+khi them vao mot method object.join() thi method nay thuc hien xong moi den cai khac
