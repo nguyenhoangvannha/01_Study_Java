@@ -1,0 +1,6 @@
+double toan = 6;
+        double ly = 7;
+        double hoa = 7;
+        double tb = (toan + ly + hoa)/ 3;
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        System.out.println("Diem trung binh: " + decimalFormat.format(tb));

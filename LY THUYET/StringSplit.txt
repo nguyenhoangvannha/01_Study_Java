@@ -1,0 +1,16 @@
+Scanner va split: co ho tro regular expresstion
+StringTokenizer: khong ho tro regex
+-Scanner:
+Scanner sc = new Scanner(strInput);
+            sc.useDelimiter(demiliter);
+            strOutput = new StringBuilder();
+            while(sc.hasNext()){
+                strOutput.append(sc.next() + "\n");
+            }
+Stringtokenizer:
+demiliter = tfStringTokenizer.getText();
+            StringTokenizer strTokenizerObj = new StringTokenizer(strInput, demiliter);
+            strOutput = new StringBuilder();
+            while(strTokenizerObj.hasMoreTokens()){
+                strOutput.append(strTokenizerObj.nextToken() + "\n");
+            }
