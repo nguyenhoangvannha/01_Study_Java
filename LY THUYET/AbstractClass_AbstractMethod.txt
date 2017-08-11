@@ -4,4 +4,5 @@ voi class:
 	phai override cac abstract method trong abstract class
 	abstract method khong co phan than chi co khai bao
 voi method:
+	phai override
 	khi overide cac tham so truyen vao phai giong voi abstract method goc

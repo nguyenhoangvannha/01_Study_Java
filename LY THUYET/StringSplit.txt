@@ -14,3 +14,4 @@ demiliter = tfStringTokenizer.getText();
             while(strTokenizerObj.hasMoreTokens()){
                 strOutput.append(strTokenizerObj.nextToken() + "\n");
             }
+-hoac StringTokenizer strTokenizerObj = new StringTokenizer(strInput, " a");//nhap cac ky tu de tach vao

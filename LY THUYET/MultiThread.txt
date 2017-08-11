@@ -1,0 +1,46 @@
+//Khai bao
+public class MyThread01 extends Thread{
+
+    @Override
+    public void run() {
+        super.run();
+        for (int i = 0; i < 5; i++){
+            System.out.println(Thread.currentThread().getName() + "\ti = " + i);
+        }
+    }
+    
+}
+//Su dung
+public class TestMyThread1 {
+    public static void main(String[] args) {
+        MyThread01 thread1 = new MyThread01();
+        thread1.setName("Tien trinh 01");
+        thread1.start();
+        
+        MyThread01 thread2 = new MyThread01();
+        thread2.setName("Tien trinh 02");
+        thread2.start();
+    }
+} 
+=============================================
+//khai bao
+public class MyThread02 implements Runnable {
+
+    @Override
+    public void run() {
+        for(int j = 0; j < 5; j++){
+            System.out.println(Thread.currentThread().getName() + "\tj=" + j);
+        }
+    }
+    
+}
+//su dung
+public class TestMyThread2 {
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(new MyThread02());
+        thread1.start();
+        Thread thread2 = new Thread(new MyThread02());
+        thread2.start();
+        
+    }
+}

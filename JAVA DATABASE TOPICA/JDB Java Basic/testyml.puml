@@ -1,0 +1,52 @@
+@startuml
+annotation java.lang.Override
+class java.io.FileInputStream
+class java.io.FileNotFoundException
+class java.io.FileOutputStream
+class java.io.IOException
+class java.io.ObjectInputStream
+class java.io.ObjectOutputStream
+class java.lang.Thread
+class java.util.ArrayList
+class java.util.Collections
+class java.util.Random
+class java.util.Scanner
+class java.util.logging.Level
+class java.util.logging.Logger
+class javax.swing.JFrame
+class jdb.java.basic.CustomerManager
+class jdb.java.basic.ExceptionBasic
+class jdb.java.basic.JDBJavaBasic
+class jdb.java.basic.KhachHang
+class jdb.java.basic.MyThread01
+class jdb.java.basic.MyThread02
+class jdb.java.basic.SerializeableFileFactory
+class jdb.java.basic.TestMyThread1
+class jdb.java.basic.TestMyThread2
+interface java.io.Serializable
+interface java.lang.Comparable
+interface java.lang.Runnable
+jdb.java.basic.CustomerManager ..> java.util.ArrayList
+jdb.java.basic.CustomerManager ..> java.util.Collections
+jdb.java.basic.CustomerManager ..> java.util.Scanner
+jdb.java.basic.JDBJavaBasic ..> java.util.Random
+jdb.java.basic.JDBJavaBasic ..> java.util.logging.Level
+jdb.java.basic.JDBJavaBasic ..> java.util.logging.Logger
+jdb.java.basic.KhachHang ..> java.lang.Override
+jdb.java.basic.KhachHang --|> java.io.Serializable
+jdb.java.basic.KhachHang --|> java.lang.Comparable
+jdb.java.basic.MyThread01 ..> java.lang.Override
+jdb.java.basic.MyThread01 --|> java.lang.Thread
+jdb.java.basic.MyThread02 ..> java.lang.Override
+jdb.java.basic.MyThread02 --|> java.lang.Runnable
+jdb.java.basic.SerializeableFileFactory ..> java.io.FileInputStream
+jdb.java.basic.SerializeableFileFactory ..> java.io.FileNotFoundException
+jdb.java.basic.SerializeableFileFactory ..> java.io.FileOutputStream
+jdb.java.basic.SerializeableFileFactory ..> java.io.IOException
+jdb.java.basic.SerializeableFileFactory ..> java.io.ObjectInputStream
+jdb.java.basic.SerializeableFileFactory ..> java.io.ObjectOutputStream
+jdb.java.basic.SerializeableFileFactory ..> java.util.ArrayList
+jdb.java.basic.SerializeableFileFactory ..> java.util.logging.Level
+jdb.java.basic.SerializeableFileFactory ..> java.util.logging.Logger
+jdb.java.basic.TestMyThread1 --|> javax.swing.JFrame
+@enduml

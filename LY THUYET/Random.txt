@@ -1,0 +1,2 @@
+Random rd = new Random();
+int x = (int)(rd()*(max-min+1)) + min

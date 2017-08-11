@@ -1,0 +1,5 @@
+Khi gan doi tuong kieu:
+	SinhVien A = new SinhVien();
+	SinhVien B = A;
+	thi luc do A,B cung tro den mot vung nho va neu muon su dung A,B doc lap nhau thi phai 		
+	sao chep vung nho A vao B

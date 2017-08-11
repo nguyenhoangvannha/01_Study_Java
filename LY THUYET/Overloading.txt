@@ -1,0 +1,3 @@
+//parameter list 
+public static int overArr(int ...arr); // thi arr la mot mang
+// khi dung overArr(1,2,3,4); // tuc la truyen vao mang {1,2,3,4}

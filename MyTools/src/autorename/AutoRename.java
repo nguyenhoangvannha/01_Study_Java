@@ -1,4 +1,4 @@
-package AutoRename;
+package autorename;
 
 import java.io.File;
 import java.nio.file.Files;

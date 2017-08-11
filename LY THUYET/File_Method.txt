@@ -1,0 +1,36 @@
+private String strSourceDirectory;
+    private File fileObj;
+    private File[] listFiles;
+    private String oldString = "", newString = "";
+    private String strOption = "Normal";
+   
+    private void btGetListFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGetListFileActionPerformed
+        // TODO add your handling code here:
+        
+            fileObj = new File(strSourceDirectory);
+            if(!fileObj.exists() || fileObj.isFile()){
+                strSourceDirectory = null;
+                JOptionPane.showMessageDialog(null, "Wrong directory", "Error", JOptionPane.ERROR_MESSAGE);
+                btChooserDirectory.requestFocus();
+                return;
+            } else {
+                taInfo.setText("");
+                listFiles = fileObj.listFiles();
+                for(int i = 0; i < listFiles.length; i++){
+                    taInfo.append(listFiles[i].getAbsolutePath() + "\n");
+                }
+               
+            }
+        }
+    }//GEN-LAST:event_btGetListFileActionPerformed
+
+    private void btChooserDirectoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChooserDirectoryActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Open a directoty");
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        chooser.setAcceptAllFileFilterUsed(false);
+        chooser.showOpenDialog(null);
+        strSourceDirectory =  chooser.getSelectedFile().getAbsolutePath();
+        tfSourceDirectory.setText(strSourceDirectory);
+    }//GEN-LAST:event_btChooserDirectoryActionPerformed

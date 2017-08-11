@@ -1,0 +1,4 @@
+FlowLayout: tu dong co dan, xuong dong
+BoxLayout: Xep theo hang hoac cot
+BorderLayout: Xep theo cac huong dong, tay, nam, bac, va o giua
+GridLayout: xep theo hang va cot

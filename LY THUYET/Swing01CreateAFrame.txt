@@ -1,0 +1,13 @@
+public class Swing01JFrame extends JFrame{
+    public Swing01JFrame(){
+        initComponents();
+    }
+    public void initComponents(){
+        this.setSize(400, 300);
+        this.setLocationRelativeTo(null);//cho cua so nam giua man hinh
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setTitle("Tieu de cua so");
+        this.setResizable(false);
+        this.setVisible(true);
+    }
+}
