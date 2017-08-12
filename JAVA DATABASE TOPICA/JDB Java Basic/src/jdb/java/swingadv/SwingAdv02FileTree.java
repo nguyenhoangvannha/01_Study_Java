@@ -138,6 +138,8 @@ public class SwingAdv02FileTree extends JFrame{
 				btnShowActionPerformed(arg0);
 			}
 		});
+//		DefaultMutableTreeNode item = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
+//		String kq = (String)item.getUserObject() ;
 	}
 
 	protected void btnShowActionPerformed(ActionEvent arg0) {

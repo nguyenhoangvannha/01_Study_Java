@@ -1,1 +1,29 @@
 Dung cho file van ban
+CACH 1
+FileReader frd = new FileReader(path2 );
+			BufferedReader brd = new BufferedReader(frd);
+			
+			StringBuilder result = new StringBuilder();
+			String line = brd.readLine();
+			do {
+				result.append(line + "\n");
+				line = brd.readLine();
+			} while(line != null);
+			txtInfo.setText(result.toString());
+
+====================================
+HOAC
+FileInputStream fis = new FileInputStream(path2);
+			InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
+			BufferedReader brd = new BufferedReader(isr);
+			
+			StringBuilder result = new StringBuilder();
+			String line = brd.readLine();
+			do {
+				result.append(line + "\n");
+				line = brd.readLine();
+			} while(line != null);
+			txtInfo.setText(result.toString());
+			brd.close();
+			isr.close();
+			fis.close();

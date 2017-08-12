@@ -1,0 +1,57 @@
+===connection
+Connection cnt = null;
+		try {
+			cnt = DriverManager.getConnection(strDefault + dbPath);
+			return cnt;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+===read
+Connection cnt = getConnectionTo(dbPath);
+		if(cnt == null) {
+			JOptionPane.showMessageDialog(null, "Connect to database error.");
+			return;
+		} else {
+			try {
+				Statement stm = cnt.createStatement();
+				ResultSet rss = stm.executeQuery("select * from SinhVien");
+				String ma;
+				String ten;
+				int tuoi;
+				while(rss.next()) {
+					ma = rss.getString("Ma");
+					ten = rss.getString("Ten");
+					tuoi = rss.getInt("Tuoi");
+					Object[] arr = {ma, ten, tuoi};
+					tbModel.addRow(arr);
+				}
+				JOptionPane.showMessageDialog(null, "Success!");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Error: " + e.toString());
+			}
+		}
+===add
+Connection cnt = getConnectionTo(dbPath);
+		
+		try {
+			Statement stm = cnt.createStatement();
+			String ma = txtMa.getText();
+			String ten = txtTen.getText();
+			int tuoi = Integer.parseInt(txtTuoi.getText());
+			String strCMD = "insert into SinhVien values('"+ma+"','"+ten+"',"+tuoi+")";
+			int kq = stm.executeUpdate(strCMD);
+			if(kq == 0) {
+				JOptionPane.showMessageDialog(null, "Adding error");
+			} else {
+				JOptionPane.showMessageDialog(null, "Success: " + kq);
+				cnt.close();
+				return true;
+			}
+
+===edit
+Statement stm = cnt.createStatement();
+			String sqlCMD = "update SinhVien set Ten='"+txtTen.getText()+"', Tuoi="+txtTuoi.getText()+" where Ma='"+txtMa.getText()+"'";
+			int kq = stm.executeUpdate(sqlCMD);

@@ -1,0 +1,5 @@
+Cai MS Access.
+Cai ucanaccess.
+Copy thu muc /bin trong ucanaccess trong ucanaccess.rar vao java/jdk/jre/bin/ext/
+Tao mot thu muc trong project roi dua file ucanaccess.jar trong ucanaccess.rar
+Nhan vao file ucanaccess.jar trong project roi chon buildpath roi nhan add buildpath
