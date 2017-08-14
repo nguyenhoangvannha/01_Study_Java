@@ -179,11 +179,11 @@ public class SinhVienUI31 extends JFrame{
 		return null;
 	}
 	
-	private void readDataBase(String dbPath) {
+	private boolean readDataBase(String dbPath) {
 		Connection cnt = getConnectionTo(dbPath);
 		if(cnt == null) {
 			JOptionPane.showMessageDialog(null, "Connect to database error.");
-			return;
+			return false;
 		} else {
 			tbModel.setRowCount(0);
 			try {
@@ -199,11 +199,10 @@ public class SinhVienUI31 extends JFrame{
 					Object[] arr = {ma, ten, tuoi};
 					tbModel.addRow(arr);
 				}
-				JOptionPane.showMessageDialog(null, "Success!");
+				return true;
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				JOptionPane.showMessageDialog(null, "Error: " + e.toString());
 			}
 		}
 		try {
@@ -212,6 +211,7 @@ public class SinhVienUI31 extends JFrame{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return false;
 	}
 	
 	private boolean addToDataBase(String dbPath) {

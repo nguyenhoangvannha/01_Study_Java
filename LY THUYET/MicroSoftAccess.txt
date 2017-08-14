@@ -55,3 +55,74 @@ Connection cnt = getConnectionTo(dbPath);
 Statement stm = cnt.createStatement();
 			String sqlCMD = "update SinhVien set Ten='"+txtTen.getText()+"', Tuoi="+txtTuoi.getText()+" where Ma='"+txtMa.getText()+"'";
 			int kq = stm.executeUpdate(sqlCMD);
+===delete
+int choose = JOptionPane.showConfirmDialog(null, "Xac nhan xoa sinh vien " + txtTen.getText(),"Xac nhan",JOptionPane.YES_NO_OPTION);
+		if(choose != JOptionPane.YES_OPTION) {
+			return false;
+		}
+		Connection cnt = getConnectionTo(dbPath);
+		if(cnt == null) {
+			return false;
+		} else {
+			try {
+				Statement stm = cnt.createStatement();
+				String sqlCMD = "delete from SinhVien where Ma='"+txtMa.getText()+"'";
+				int kq = stm.executeUpdate(sqlCMD);
+				if(kq == 0) {
+					JOptionPane.showMessageDialog(null, "Error");
+				} else {
+					JOptionPane.showMessageDialog(null, "Success: " + kq);
+				}
+				cnt.close();
+				readDataBase(dbPath);
+				return true;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		try {
+			cnt.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+===search 1
+protected boolean searchIntoDataBaseByName(String dbPath) {
+		// TODO Auto-generated method stub
+		String keyWord = txtTim.getText();
+		if(keyWord.equals("")) {
+			return false;
+		}
+		Connection cnt = getConnectionTo(dbPath);
+		if(cnt == null) {
+			return false;
+		} else {
+			try {
+				Statement stm = cnt.createStatement();
+				ResultSet rss = stm.executeQuery("select * from SinhVien where Ten like '%"+keyWord+"%' or Ma like '%"+keyWord+"%'");
+				while(rss.next()) {
+					int tuoiResult = rss.getInt("Tuoi");
+					String ma = rss.getString("Ma");
+					String ten = rss.getString("Ten");
+					Object[] arr = {ma, ten, tuoiResult};
+					tbModel.addRow(arr);
+				}
+				cnt.close();
+				return true;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		try {
+			cnt.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
